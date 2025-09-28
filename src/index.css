@@ -1,0 +1,188 @@
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap");
+
+@import "tailwindcss";
+
+:root {
+  --font-display: "Urbanist", sans-serif;
+  --breakpoint-3xl: 1920px;
+  --color-primary: #ff9324;
+}
+
+
+
+.btn-primary {
+  @apply w-full bg-gradient-to-r from-[#FF9324] to-[#c99a4b] text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:shadow-lg transform hover:scale-[1.02];
+}
+
+:root {
+  --color-primary: #FF9324;
+}
+
+.text-primary {
+  color: var(--color-primary);
+}
+
+.bg-primary {
+  background-color: var(--color-primary);
+}
+
+.border-primary {
+  border-color: var(--color-primary);
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+
+@layer base {
+  html {
+    font-family: var(--font-display);
+  }
+
+  body {
+    background-color: #fcfbfc;
+    overflow-x: hidden;
+  }
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(100, 100, 100, 0.4);
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+@layer utilities {
+  /* Animation text with a shine effect  */
+  @keyframes text-shine {
+    to {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 100% 50%;
+    }
+  }
+}
+
+.animation-text-shine {
+  animation: text-shine 3s ease-in-out infinite alternate;
+}
+
+@keyframes blob1 {
+  0%,
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -60px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+}
+
+@keyframes blob2 {
+  0%,
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(40px, -60px) scale(1.05);
+  }
+  66% {
+    transform: translate(20px, -40px) scale(0.95);
+  }
+}
+
+@keyframes blob3 {
+  0%,
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(20px, 140px) scale(1.15);
+  }
+  66% {
+    transform: translate(-30px, -30px) scale(0.85);
+  }
+}
+
+.animation-blob1 {
+  animation: blob1 8s ease-in-out infinite;
+}
+
+.animation-blob2 {
+  animation: blob2 10s ease-in-out infinite;
+}
+
+.animation-blob3 {
+  animation: blob3 12s ease-in-out infinite;
+}
+
+.input-box {
+  @apply w-full flex justify-between gap-3 text-sm text-black bg-gray-50/50 rounded px-4 py-3 mb-4 mt-3 border border-gray-100 outline-none focus-within:border-orange-300;
+}
+
+.btn-primary {
+  @apply w-full flex items-center justify-center gap-2 text-sm font-medium text-white bg-black shadow-lg shadow-orange-600/5 p-[10px] rounded-md my-1 hover:bg-orange-600/15 hover:text-black cursor-pointer;
+}
+
+.btn-small {
+  @apply flex items-center justify-center gap-3 bg-linear-to-r from-[#FF9324] to-[#e99a4b] text-sm font-semibold text-white px-7 py-2 rounded-lg hover:bg-black hover:text-white transition-colors cursor-pointer hover:shadow-2xl hover:shadow-orange-300;
+}
+
+
+/* add to index.css */
+.skeleton-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+.skeleton-shimmer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);
+  animation: shimmer 1.6s infinite;
+}
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* index.css */
+/* ...existing code... */
+.drawer-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+.drawer-scroll::-webkit-scrollbar-track {
+  background: #f5f7fa;
+}
+.drawer-scroll::-webkit-scrollbar-thumb {
+  background: #d2d7de;
+  border-radius: 4px;
+}
+.drawer-scroll::-webkit-scrollbar-thumb:hover {
+  background: #b7bcc3;
+}
+.drawer-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #d2d7de #f5f7fa;
+}

@@ -11,28 +11,31 @@ const ProfileInfoCard = () => {
     clearUser();
     navigate("/");
   };
-  return (
-    user && (
-      <div className="flex items-center">
-        <img
-          src={user.profileImageUrl}
-          alt=""
-          className="w-11 h-11 bg-gray-300 rounded-full mr-3  border border-amber-500"
-        />
-        <div>
-          <div className="text-[15px] text-black font-bold leading-3">
-            {user.name || ""}
-          </div>
-          <button
-            className="text-amber-600 text-sm font-semibold cursor-pointer hover:underline"
-            onClick={handleLogout}
-          >
-            Logout
-          </button>
+ return (
+  user && (
+    <div className="flex items-center">
+      <img
+        src={user.profileImageUrl || '/default-avatar.png'} // Add fallback
+        alt={user.name || 'User'}
+        className="w-11 h-11 bg-gray-300 rounded-full mr-3 border border-amber-500"
+        onError={(e) => {
+          e.target.src = '/default-avatar.png'; // Fallback on error
+        }}
+      />
+      <div>
+        <div className="text-[15px] text-black font-bold leading-3">
+          {user.name || ""}
         </div>
+        <button
+          className="text-amber-600 text-sm font-semibold cursor-pointer hover:underline"
+          onClick={handleLogout}
+        >
+          Logout
+        </button>
       </div>
-    )
-  );
+    </div>
+  )
+);
 };
 
 export default ProfileInfoCard;

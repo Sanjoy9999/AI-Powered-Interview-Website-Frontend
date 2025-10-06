@@ -9,18 +9,18 @@ const Input = ({ value, onChange, type, label, placeholder, required }) => {
   };
 
   return (
-    <div className="mb-4">
-      <label className="block text-[13px] text-slate-800 mb-2 font-medium">
+    <div className="mb-3 sm:mb-4">
+      <label className="block text-xs sm:text-[13px] text-slate-800 mb-1.5 sm:mb-2 font-medium">
         {label}
       </label>
 
-      <div className="relative flex items-center border border-gray-300 rounded-lg px-3 py-3 focus-within:border-orange-500 focus-within:ring-1 focus-within:ring-orange-500 transition-all duration-200 bg-white">
+      <div className="relative flex items-center border border-gray-300 rounded-lg px-3 py-2 sm:py-3 focus-within:border-orange-500 focus-within:ring-1 focus-within:ring-orange-500 transition-all duration-200 bg-white">
         <input
           type={
             type === "password" ? (showPassword ? "text" : "password") : type
           }
           placeholder={placeholder}
-          className="w-full bg-transparent outline-none text-gray-700 placeholder-gray-400 text-sm"
+          className="w-full bg-transparent outline-none text-gray-700 placeholder-gray-400 text-xs sm:text-sm"
           value={value}
           onChange={(e) => onChange(e)}
           required={required}

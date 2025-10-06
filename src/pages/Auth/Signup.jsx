@@ -95,13 +95,13 @@ const Signup = ({ setCurrentPage }) => {
   };
 
   return (
-    <div className="w-[90vw] md:w-[33vw] p-7 flex flex-col justify-center">
-      <h3 className="text-lg font-semibold text-black mb-1">Create Account</h3>
-      <p className="text-xs text-slate-700 mb-6">
+    <div className="w-full max-w-[500px] p-4 sm:p-6 md:p-7 flex flex-col justify-center mx-auto">
+      <h3 className="text-base sm:text-lg md:text-xl font-semibold text-black mb-1">Create Account</h3>
+      <p className="text-xs sm:text-sm text-slate-700 mb-4 sm:mb-6">
         Join us today by entering your details below.
       </p>
 
-      <form onSubmit={handleSignup} className="space-y-4">
+      <form onSubmit={handleSignup} className="space-y-3 sm:space-y-4">
         <ProfilePhotoSelector image={profilePic} setImage={setProfilePic} />
 
         <Input
@@ -131,13 +131,13 @@ const Signup = ({ setCurrentPage }) => {
           required
         />
 
-        {error && <p className="text-red-500 text-xs pb-2.5">{error}</p>}
+        {error && <p className="text-red-500 text-xs sm:text-sm pb-2.5 break-words">{error}</p>}
 
-        <button type="submit" className="btn-primary hover:bg-orange-500 transition-colors duration-300">
+        <button type="submit" className="btn-primary hover:bg-orange-500 transition-colors duration-300 w-full text-sm sm:text-base">
           Sign Up
         </button>
 
-        <p className="text-[13px] text-slate-800 text-center">
+        <p className="text-xs sm:text-[13px] text-slate-800 text-center pt-2">
           Already have an account?{" "}
           <button 
             type="button"

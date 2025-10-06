@@ -90,13 +90,13 @@ const Login = ({ setCurrentPage }) => {
   };
   
   return (
-    <div className="w-[90vw] md:w-[33vw] p-7 flex flex-col justify-center">
-      <h3 className="text-lg font-semibold text-black mb-1">Welcome Back</h3>
-      <p className="text-xs text-slate-700 mb-6">
+    <div className="w-full max-w-[500px] p-4 sm:p-6 md:p-7 flex flex-col justify-center mx-auto">
+      <h3 className="text-base sm:text-lg md:text-xl font-semibold text-black mb-1">Welcome Back</h3>
+      <p className="text-xs sm:text-sm text-slate-700 mb-4 sm:mb-6">
         Please enter your details to login
       </p>
 
-      <form onSubmit={handleLogin} className="space-y-4">
+      <form onSubmit={handleLogin} className="space-y-3 sm:space-y-4">
         <Input
           value={email}
           onChange={(e) => setEmail(e.target.value)}
@@ -114,17 +114,17 @@ const Login = ({ setCurrentPage }) => {
           required
         />
 
-        {error && <p className="text-red-500 text-xs pb-2.5">{error}</p>}
+        {error && <p className="text-red-500 text-xs sm:text-sm pb-2.5 break-words">{error}</p>}
         
         <button 
           type="submit" 
           disabled={isLoading}
-          className={`btn-primary hover:bg-orange-500 transition-colors duration-300 ${isLoading ? 'opacity-70 cursor-not-allowed' : ''}`}
+          className={`btn-primary hover:bg-orange-500 transition-colors duration-300 w-full text-sm sm:text-base ${isLoading ? 'opacity-70 cursor-not-allowed' : ''}`}
         >
           {isLoading ? 'Logging in...' : 'Login'}
         </button>
 
-        <p className="text-[13px] text-slate-800 text-center">
+        <p className="text-xs sm:text-[13px] text-slate-800 text-center pt-2">
           Don't have an account?{" "}
           <button 
             type="button"
